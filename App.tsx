@@ -8,6 +8,7 @@
 import React from 'react';
 import type {PropsWithChildren} from 'react';
 import {
+  Button,
   SafeAreaView,
   ScrollView,
   StatusBar,
@@ -24,6 +25,7 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+import {registerUsernameToDFNS} from './src/registerFlow';
 
 type SectionProps = PropsWithChildren<{
   title: string;
@@ -86,6 +88,10 @@ function App(): React.JSX.Element {
           <Section title="Debug">
             <DebugInstructions />
           </Section>
+          <Button
+            title="Press"
+            onPress={async () => registerUsernameToDFNS('adsdasds@gsm.com')}
+          />
           <Section title="Learn More">
             Read the docs to discover what to do next:
           </Section>
